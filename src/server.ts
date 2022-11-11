@@ -2,7 +2,6 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import http from 'http';
 import dotenv from 'dotenv';
-import router from './router';
 
 dotenv.config();
 const port = parseInt(process.env.PORT) || 8080;
@@ -15,7 +14,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // routers
 app.get('/', (req, res) => res.send('hello world'));
-app.use('/api', router);
 
 const server = http.createServer(app);
 
